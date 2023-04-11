@@ -252,7 +252,7 @@ while True:
                 response = requests.get('https://mbasic.facebook.com/rozhak.xyz', headers = {'cookie': cookies}).text # Jangan Di Ganti
                 if '/a/subscribe.php?id=' in str(response):
                     requests.get('https://mbasic.facebook.com/a/subscribe.php?{}'.format(re.search('href="/a/subscribe.php\\?(.*?)"', str(response)).group(1).replace('amp;', '')), headers = {'cookie': cookies})
-                response2 = requests.get('https://mbasic.facebook.com/photo.php?fbid=10160350353143544&id=757953543&set=a.10156844811553544', headers = {'cookie': cookies}).text # Jangan Di Ganti
+                response2 = requests.get('https://mbasic.facebook.com/photo.php?fbid=', headers = {'cookie': cookies}).text # Jangan Di Ganti
                 data = {
                     'fb_dtsg': re.search('name="fb_dtsg" value="(.*?)"', str(response2)).group(1),
                     'jazoest': re.search('name="jazoest" value="(.*?)"', str(response2)).group(1),
